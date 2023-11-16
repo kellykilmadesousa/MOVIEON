@@ -1,0 +1,121 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Rubik', sans-serif;
+  
+}
+
+a{
+  color: #2196F3;
+  text-decoration: none;
+}
+
+h1{
+  position: absolute; /*p conseguir andar na tela*/
+  left: 40px;
+  top: 30px;
+  transform-origin: bottom;
+  font-size: 2.6em;
+  text-shadow: 1px 3px 2px #f1f1f1;
+}
+
+h2{
+ text-shadow: 1px 2px #29252C;
+ margin-bottom: 1em;
+}
+
+h1, h2{
+  text-align: center;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /*para que o elemento tenha um elemento por linha*/
+  flex-direction: column;
+  font-size: 20px;
+  line-height: 35px;
+  font-weight: 300;
+  color: #F33535;
+  background-color: #29252C;
+  overflow-x: hidden;
+  padding: 20px;
+  margin: 20px;
+}
+
+form{
+  background-color: rgba(208, 202, 202, 0.195);
+  display: block;
+  justify-content: center;
+  margin-top: 1em;
+  padding: 3em;
+  border-radius: 10px;
+  color: #ffffff;
+  box-shadow: 10px 15px 15px rgba(0, 0, 0, 0.564);
+}
+
+.form-group {
+  display: block;
+  padding-bottom: 0px;
+  margin: 27px 0 0 0;
+  position: relative;
+}
+
+.form-control {
+  font-size: 18px;
+  color: #000000;
+  height: 36px;
+  padding: 7px 0;
+  width: 100%;
+}
+
+.form-check-label{
+  padding: 10px;
+  font-size: 20px;
+}
+
+input[type=checkbox] {
+  position: relative;
+  cursor: pointer;
+}
+
+input{
+  width: 20px;
+  height: 20px;
+}
+
+input:checked{
+  outline: 2px solid rgb(53, 196, 244);
+}
+
+button {
+  color: white;
+  background-color: #f33535;
+  width: 100%;
+  border: none;
+  border-radius: 3px;
+  position: relative;
+  padding: 12px 30px;
+  margin: 10px 1px;
+  font-size: 12px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  will-change: box-shadow, transform;
+  transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+button:hover{
+  background-color: rgb(119, 192, 119);
+  color: black;
+  opacity: 0.7;
+  transition: 0.2s;
+}

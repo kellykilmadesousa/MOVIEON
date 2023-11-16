@@ -1,61 +1,3 @@
-/*LOGIN
-import React from 'react';
-import "./App.css";
-
-const LoginForm = () => {
-  return (
-    <div>
-      <h1>MOVIE ON</h1>
-      <form>
-        <h2>Entrar</h2>
-        <div>
-          <div className="form-group">
-            <label htmlFor="exampleInputEmail1"></label>  
-            <input
-              type="email"
-              className="form-control"
-              id="exampleInputEmail1"
-              placeholder="E-mail"
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="exampleInputPassword1"></label>
-            <input
-              type="password"
-              className="form-control"
-              id="exampleInputPassword1"
-              placeholder="Senha"
-            />
-          </div>
-          <div className="form-group">
-            <input
-              type="checkbox"
-              // className="form-check-input"
-              id="exampleCheck1"
-            />
-            <label className="form-check-label" htmlFor="exampleCheck1">
-              Lembrar a senha
-            </label>
-          </div>
-          <button type="submit">
-            Entrar
-          </button>
-          <div>
-            <a href="#">Esqueceu a senha?</a>
-          </div>
-          <p>
-            Novo por aqui? <a href="#">Assine agora</a>
-          </p>
-        </div>
-      </form>
-    </div>
-  );
-};
-
-export default LoginForm;*/
-
-
-//REGISTER
 import React, { useState } from 'react';
 import './App.css';
 
@@ -70,16 +12,24 @@ const SignupForm = () => {
     lembrarSenha: '',
   });
 
+  const handleChange = (e) => {
+    const { id, value, type, checked } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [id]: type === 'checkbox' ? checked : value,
+    }));
+  };
+
   const handleSubmit = (e) => {
-    // e.preventDefault();
-    // // Espaço para adicionar a lógica do formulário
-    // console.log('Form submitted:', formData);
+    e.preventDefault();
+    // Aqui vai a lógica do formulário
+    console.log('Form submitted:', formData);
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <h1>MOVIE ON</h1>
-      <div>
+      <div className="box">
         <h2>Crie sua conta</h2>
         <div>
           <div className="form-group">
@@ -89,6 +39,8 @@ const SignupForm = () => {
               className="form-control"
               id="nome"
               placeholder="Nome"
+              value={formData.nome}
+              onChange={handleChange}
             />
           </div>
           <div className="form-group">
@@ -98,6 +50,8 @@ const SignupForm = () => {
               className="form-control"
               id="sobrenome"
               placeholder="Sobrenome"
+              value={formData.sobrenome}
+              onChange={handleChange}
             />
           </div>
         </div>
@@ -108,6 +62,8 @@ const SignupForm = () => {
             className="form-control"
             id="telefone"
             placeholder="(__) _____-____"
+            value={formData.telefone}
+            onChange={handleChange}
           />
         </div>
         <div className="form-group">
@@ -117,6 +73,8 @@ const SignupForm = () => {
             className="form-control"
             id="email"
             placeholder="E-mail"
+            value={formData.email}
+            onChange={handleChange}
           />
         </div>
         <div className="form-group">
@@ -126,6 +84,8 @@ const SignupForm = () => {
             className="form-control"
             id="senha"
             placeholder="Senha"
+            value={formData.senha}
+            onChange={handleChange}
           />
         </div>
         <div className="form-group">
@@ -135,13 +95,17 @@ const SignupForm = () => {
             className="form-control"
             id="confirmarSenha"
             placeholder="Confirmar a senha"
+            value={formData.confirmarSenha}
+            onChange={handleChange}
           />
         </div>
-        <div className="form-group">
+        <div className="form-group form-check">
           <input
             type="checkbox"
             className="form-check-input"
             id="lembrarSenha"
+            checked={formData.lembrarSenha}
+            onChange={handleChange}
           />
           <label className="form-check-label" htmlFor="lembrarSenha">
             Lembrar a senha
